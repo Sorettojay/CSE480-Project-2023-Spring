@@ -1,0 +1,42 @@
+ for i in range(len(tokenized_statement)):
+            ######################################
+            counter = 0
+
+            #Handling SQL commands
+            if tokenized_statement[i] == 'CREATE':
+                if tokenized_statement[i + 1] == 'TABLE':
+                    table = []
+                    table_name = tokenized_statement[i + 2]
+
+                        # Adding table to the global database
+                    _ALL_DATABASES[table_name] = table
+
+                #Handling INSERT INTO
+            elif tokenized_statement[i] == 'INSERT':
+                if tokenized_statement[i + 1] == 'INTO':
+                    if tokenized_statement[i + 2] == table_name:
+                        table.append((tokenized_statement[i + 3]))
+
+                #Handling SELECT FROM
+            elif tokenized_statement[i] == 'SELECT':
+                if tokenized_statement[i + 1] == '*':
+                    if tokenized_statement[i + 2] == 'FROM':
+                        if tokenized_statement[i + 3] == table_name:
+                            pass
+
+                elif tokenized_statement[i + 1] == 'column_name':
+                    if tokenized_statement[i + 2] == 'FROM':
+                        if tokenized_statement[i + 3] == table_name:
+                            pass
+            else:
+                pass
+
+                #Handling ORDER BY
+
+             # Updating table to the global database
+            _ALL_DATABASES.update({table_name: table})
+            ####################################
+
+            #Incrementing counter
+            counter += 1
+            print(_ALL_DATABASES)
