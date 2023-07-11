@@ -1,0 +1,3 @@
+1: CREATE TABLE students (name TEXT, grade REAL);
+1: INSERT INTO students VALUES ('James', 2.4), ('Yaxin', 3.5), ('Li', 3.7), ('Wayne', 4.0);
+1: SELECT name FROM students WHERE grade > 3.0 ORDER BY name;
