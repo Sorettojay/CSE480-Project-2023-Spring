@@ -1,0 +1,8 @@
+CREATE TABLE student (name TEXT, grade REAL, piazza INTEGER);
+INSERT INTO student VALUES ('James', 4.0, 1);
+INSERT INTO student VALUES ('Yaxin', 4.0, 2);
+INSERT INTO student VALUES ('Li', 3.2, 2);
+DELETE FROM student WHERE piazza > 3;
+SELECT * FROM student ORDER BY name;
+DELETE FROM student WHERE piazza = 2;
+SELECT * FROM student ORDER BY name;

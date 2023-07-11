@@ -1,0 +1,12 @@
+CREATE TABLE names (name TEXT, id INTEGER);
+INSERT INTO names VALUES ('James', 1);
+INSERT INTO names VALUES ('Yaxin', 3);
+INSERT INTO names VALUES ('Li', 2);
+INSERT INTO names VALUES (NULL, 4);
+SELECT * FROM names ORDER BY id;
+CREATE TABLE grades (id INTEGER, grade REAL);
+INSERT INTO grades VALUES (3, 3.0);
+INSERT INTO grades VALUES (1, 2.0);
+INSERT INTO grades VALUES (2, 3.5);
+SELECT * FROM grades ORDER BY id;
+SELECT names.name, grades.grade FROM names LEFT OUTER JOIN grades ON names.id = grades.id ORDER BY names.id;
